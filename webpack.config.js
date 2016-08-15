@@ -29,10 +29,6 @@ module.exports = {
                 loader: 'file'
             },
             {
-                test: /styles\/*.css$/,
-                loader: "style-loader!css-loader"
-            },
-            {
                 test: /\.css$/,
                 loader: 'raw'
             }
@@ -46,6 +42,10 @@ module.exports = {
             hash: true,
             filename: 'index.html',
             template: './src/index.html'
+        }),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
         })
     ]
 };
