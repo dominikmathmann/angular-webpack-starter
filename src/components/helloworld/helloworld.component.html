@@ -1,7 +1,16 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-4 col-sm-offset-4">
-            <div class="btn-lg btn btn-default title">{{title}}</div>
+            <button class="btn-lg btn btn-default title" (click)="showInfo=!showInfo">{{title}}</button>
+        </div>
+    </div>
+    <div class="row nfoPanel" *ngIf="showInfo">
+        <div class="col-sm-4 col-sm-offset-4">
+            <div class="panel panel-default centered">
+                <div class="panel-body">
+                    ...from Angular2 + Webpack
+                </div>
+            </div>
         </div>
     </div>
 </div>
