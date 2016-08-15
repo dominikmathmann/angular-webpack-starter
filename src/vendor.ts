@@ -2,6 +2,7 @@
 import 'core-js/es6';
 import 'core-js/es7/reflect';
 import 'zone.js/dist/zone';
+import 'web-animations-js/web-animations.min.js';
 
 // Angular 2
 import '@angular/platform-browser';
