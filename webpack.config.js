@@ -1,9 +1,9 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/app.ts',
+    entry: './src/main.ts',
     resolve: {
-        extensions: ['', '.webpack.js', '.web.js', '.ts', '.js', '.css']
+        extensions: ['', '.webpack.js', '.web.js', '.ts', '.js', '.css', '.png']
     },
     devtool: 'source-map',
     output: {
@@ -15,14 +15,25 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.css$/,
-                loader: "style-loader!css-loader"
+                test: /\.html$/,
+                loader: 'html'
             },
             {
                 test: /\.ts$/,
                 loader: 'ts-loader'
             },
-
+            {
+                test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
+                loader: 'file'
+            },
+            {
+                test: /styles\/*.css$/,
+                loader: "style-loader!css-loader"
+            },
+            {
+                test: /\.css$/,
+                loader: 'raw'
+            }
         ]
     },
     plugins: [
