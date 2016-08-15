@@ -1,6 +1,5 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
-
 module.exports = {
     entry: {
         'vendor': './src/vendor.ts',
