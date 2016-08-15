@@ -1,4 +1,5 @@
-import { NgModule }      from '@angular/core';
+import { NgModule, provide }      from '@angular/core';
+import {LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { FormsModule }      from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing, appRoutingProviders } from './app.routing';
@@ -13,9 +14,7 @@ import "style-loader!./assets/css/app.css";
         routing
     ],
     declarations: [AppComponent],
+    providers: [appRoutingProviders, provide(LocationStrategy, { useClass: HashLocationStrategy })],
     bootstrap: [AppComponent],
-    providers: [
-        appRoutingProviders
-    ],
 })
 export class AppModule { }
