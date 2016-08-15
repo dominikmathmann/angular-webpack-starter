@@ -10,8 +10,10 @@ import {ExampleModel} from '../../models/index'
 })
 export class HelloWorldComponent {
     constructor(service: HelloWorldService){
-        var hello=service.getHello();
-        this.title = hello.message + " " + hello.name;
+        service.getHello().subscribe(hello => {
+            this.title = hello.message + " " + hello.name;
+        })
+        
     }
     
     title:string

@@ -13,6 +13,14 @@ module.exports = {
         path: './target',
         filename: '[name].bundle.js',
     },
+    devServer: {
+        proxy: {
+            '/*': 'http://localhost:3000/'
+        }
+    },
+    htmlLoader: {
+        minimize: false // workaround for ng2
+    },
     module: {
         loaders: [
             {
