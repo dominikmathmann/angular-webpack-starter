@@ -1,16 +1,18 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack');
 
 module.exports = {
-    entry: './src/main.ts',
+    entry: {
+        'vendor': './src/vendor.ts',
+        'app': './src/main.ts'
+    },
     resolve: {
         extensions: ['', '.webpack.js', '.web.js', '.ts', '.js', '.css', '.png']
     },
     devtool: 'source-map',
     output: {
         path: './target',
-        filename: 'app.bundle.js',
-        libraryTarget: 'var',
-        library: 'App'
+        filename: '[name].bundle.js',
     },
     module: {
         loaders: [
@@ -37,6 +39,9 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: ['app', 'vendor']
+        }),
         new HtmlWebpackPlugin({
             hash: true,
             filename: 'index.html',

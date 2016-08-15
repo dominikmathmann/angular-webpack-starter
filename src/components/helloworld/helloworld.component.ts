@@ -1,7 +1,7 @@
 import {Component} from '@angular/core'
 
 @Component({
-    template: "Hello: {{title}}",
+    template: require('./helloworld.component.html'),
     selector: 'webpack-demo',
 })
 export class HelloWorldComponent {
