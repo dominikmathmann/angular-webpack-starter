@@ -14,6 +14,7 @@ describe("Home-Page", () => {
         PageModel.helloButton.click().then(e => {
             expect(PageModel.infoPanel.isPresent()).toBeTruthy();
             PageModel.helloButton.click().then(e => { 
+                browser.driver.sleep(1000)
                 expect(PageModel.infoPanel.isPresent()).toBeFalsy();
             })
         })
