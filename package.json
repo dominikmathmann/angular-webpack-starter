@@ -12,8 +12,9 @@
     "json-server": "json-server --routes ./test/routes.json --watch ./test/db.json",
     "start": "concurrently 'webpack-dev-server --hot --inline --port 4300' 'npm run json-server'",
     "prod": "webpack --optimize-minimize",
-    "start-prod": "npm run prod & webpack-dev-server --port 4300 --optimize-minimize",
-    "test": "protractor test/protractor.conf.js --baseUrl http://localhost:4300",
+    "start-prod": "webpack-dev-server --port 4300 --optimize-minimize",
+    "protractor": "protractor test/protractor.conf.js --baseUrl http://localhost:4300",
+    "test": "concurrently --kill-others 'npm run start-prod' 'npm run json-server' 'node ./test/delayed-protractor.js'",
     "test-f": "nodemon -e ts,html,css --exec 'npm run test'"
   },
   "author": "Dominik Mathmann",
