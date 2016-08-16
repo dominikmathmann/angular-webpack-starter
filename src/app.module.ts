@@ -6,7 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { routing, appRoutingProviders } from './app.routing';
 
 import { AppComponent }  from './app.component';
-import "style-loader!./assets/css/app.css";
+import "./assets/css/app.css";
 
 @NgModule({
     imports: [

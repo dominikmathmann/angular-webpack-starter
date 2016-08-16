@@ -6,7 +6,7 @@ module.exports = {
         'app': './src/main.ts'
     },
     resolve: {
-        extensions: ['', '.webpack.js', '.web.js', '.ts', '.js', '.css', '.png']
+        extensions: ['', '.js', '.ts', 'css']
     },
     devtool: 'source-map',
     output: {
@@ -32,11 +32,21 @@ module.exports = {
                 loader: 'ts-loader'
             },
             {
-                test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-                loader: 'file'
+                test: /\.(woff|woff2|ttf|eot|ico)$/,
+                loader: 'file?name=fonts/[name].[hash].[ext]'
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/,
+                loader: 'file?name=images/[name].[hash].[ext]'
             },
             {
                 test: /\.css$/,
+                exclude: /\/components\//,
+                loader: "style!css"
+            },
+            {
+                test: /\.css$/,
+                include: /\/components\//,
                 loader: 'raw'
             }
         ]

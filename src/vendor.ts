@@ -19,5 +19,5 @@ import 'rxjs';
 import 'jquery/dist/jquery.js'
 
 //bootstrap
-import "style-loader!bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.css";
 import 'bootstrap/dist/js/bootstrap.js'

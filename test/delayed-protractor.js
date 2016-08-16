@@ -4,4 +4,4 @@ setTimeout(function () {
     exec(cmd, function (error, stdout, stderr) {
         console.log(error);
     });
-}, 10000)
+}, 15000)
