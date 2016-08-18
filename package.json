@@ -1,23 +1,24 @@
 {
-  "name": "webpack-demo",
+  "name": "angular-webpack-starter",
   "version": "1.0.0",
   "keywords": [
-    "util",
-    "functional",
-    "server",
-    "client",
-    "browser"
+    "angular2",
+    "angular",
+    "webpack",
+    "starter",
+    "json-server",
+    "protractor"
   ],
   "scripts": {
     "json-server": "json-server --routes ./test/routes.json --watch ./test/db.json",
-    "start": "concurrently 'webpack-dev-server --hot --inline --port 4300' 'npm run json-server'",
-    "prod": "webpack --optimize-minimize",
-    "start-prod": "webpack-dev-server --port 4300 --optimize-minimize",
+    "start": "concurrently 'webpack-dev-server --hot --inline --port 4300 --define PRODMODE=false' 'npm run json-server'",
+    "prod": "webpack --optimize-minimize --define PRODMODE=true",
+    "start-prod": "webpack-dev-server --port 4300 --optimize-minimize --define PRODMODE=true",
     "protractor": "protractor test/protractor.conf.js --baseUrl http://localhost:4300",
     "test": "concurrently --kill-others 'npm run start-prod' 'npm run json-server' 'node ./test/delayed-protractor.js'",
     "test-f": "nodemon -e ts,html,css --exec 'npm run test'"
   },
-  "author": "Dominik Mathmann",
+  "author": "Dominik Mathmann, GEDOPLAN",
   "contributors": [],
   "watch-test": {
     "test": {
