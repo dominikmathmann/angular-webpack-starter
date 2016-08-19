@@ -2,7 +2,7 @@ exports.config = {
   baseUrl: 'http://localhost:4300/',
 
   specs: [
-    './**/*.test.ts'
+    './target/**/*.test.js'
   ],
   exclude: [],
 
@@ -28,7 +28,7 @@ exports.config = {
     jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: true}));
     
     
-    browser.ignoreSynchronization = true;
+    browser.ignoreSynchronization = false;
   },
 
 
