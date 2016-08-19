@@ -1,4 +1,4 @@
-import { NgModule, provide}      from '@angular/core';
+import { NgModule, enableProdMode}      from '@angular/core';
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import { FormsModule }      from '@angular/forms';
 import { HttpModule }      from '@angular/http';
@@ -8,6 +8,17 @@ import { routing, appRoutingProviders } from './app.routing';
 import { AppComponent }  from './app.component';
 import "./assets/css/app.css";
 
+const MODE = process.env.runtime;
+
+
+if (MODE == "development") {
+    console.log("Running Application with DEV - Flag")
+}
+else {
+    console.log("Running Application with PROD - Flag")
+    enableProdMode();
+}
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -16,7 +27,10 @@ import "./assets/css/app.css";
         routing
     ],
     declarations: [AppComponent],
-    providers: [appRoutingProviders, provide(LocationStrategy, { useClass: HashLocationStrategy })],
+    providers: [
+        appRoutingProviders,
+        { provide: LocationStrategy, useClass: HashLocationStrategy }
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule { }

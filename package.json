@@ -11,10 +11,11 @@
   ],
   "scripts": {
     "json-server": "json-server --routes ./test/routes.json --watch ./test/db.json",
-    "start": "concurrently 'webpack-dev-server --hot --inline --port 4300 --define PRODMODE=false' 'npm run json-server'",
-    "prod": "webpack --optimize-minimize --define PRODMODE=true",
-    "start-prod": "webpack-dev-server --port 4300 --optimize-minimize --define PRODMODE=true",
-    "protractor": "protractor test/protractor.conf.js --baseUrl http://localhost:4300",
+    "dev-server": "webpack-dev-server --hot --inline --config ./webpack.dev.config.js",
+    "start": "concurrently 'npm run dev-server' 'npm run json-server'",
+    "prod": "webpack --config ./webpack.prod.config.js",
+    "start-prod": "webpack-dev-server --port 4300 --config ./webpack.prod.config.js",
+    "protractor": "rimraf ./test/target && tsc ./test/**/*.ts -t ES5 --outDir ./test/target && protractor test/protractor.conf.js",
     "test": "concurrently --kill-others 'npm run start-prod' 'npm run json-server' 'node ./test/delayed-protractor.js'",
     "test-f": "nodemon -e ts,html,css --exec 'npm run test'"
   },
@@ -49,6 +50,7 @@
     "rxjs": "5.0.0-beta.6",
     "ts-loader": "^0.8.2",
     "web-animations-js": "^2.2.2",
+    "webpack-merge": "^0.14.1",
     "zone.js": "0.6.12"
   },
   "devDependencies": {
@@ -61,6 +63,7 @@
     "jasmine-spec-reporter": "^2.5.0",
     "nodemon": "^1.10.0",
     "raw-loader": "^0.5.1",
+    "rimraf": "^2.5.4",
     "script-loader": "^0.7.0",
     "style-loader": "^0.13.1",
     "typescript": "^1.7.3",
