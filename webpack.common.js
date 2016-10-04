@@ -1,5 +1,7 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports = {
     entry: {
         'vendor': './src/vendor.ts',
@@ -30,11 +32,11 @@ module.exports = {
                 loader: 'ts-loader'
             },
             {
-                test: /\.(woff|woff2|ttf|eot|ico)$/,
-                loader: 'file?name=fonts/[name].[hash].[ext]'
+                test: /\.(png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: 'file?name=fonts/[name].[ext]'
             },
             {
-                test: /\.(png|jpe?g|gif|svg)$/,
+                test: /\.(png|jpe?g|gif)$/,
                 loader: 'file?name=images/[name].[hash].[ext]'
             },
             {
@@ -61,6 +63,9 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery"
-        })
+        }),
+//        new CopyWebpackPlugin([
+//            { from: 'SomePath' }
+//        ])
     ]
 };

@@ -3,8 +3,8 @@ import {HelloWorldService} from '../../services/index'
 import {ExampleModel} from '../../models/index'
 
 @Component({
-    template: require('./helloworld.component.html'),
-    styles: [require('./helloworld.component.css')],
+    template: require('./home.component.html'),
+    styles: [require('./home.component.css')],
     selector: 'webpack-demo',
     providers: [HelloWorldService],
     animations: [
@@ -20,7 +20,7 @@ import {ExampleModel} from '../../models/index'
         ])
     ]
 })
-export class HelloWorldComponent {
+export class HomeComponent {
     constructor(service: HelloWorldService) {
         service.getHello().subscribe(hello => {
             this.title = hello.message + " " + hello.name;

@@ -1,8 +1,10 @@
 import { Routes, RouterModule } from '@angular/router';
-import {HelloWorldComponent} from './components/helloworld/helloworld.component'
+import {HomeComponent} from './components/home/home.component'
+import {HelloComponent} from './components/hello/hello.component'
 
 const appRoutes: Routes = [
-    { path: '', component: HelloWorldComponent },
+    { path: '', component: HomeComponent},
+    { path: 'hello', component: HelloComponent},
 ];
 
 export const appRoutingProviders: any[] = [

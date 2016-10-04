@@ -6,7 +6,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { routing, appRoutingProviders } from './app.routing';
 
 import { AppComponent }  from './app.component';
-import {HelloWorldComponent} from './components/helloworld/helloworld.component'
+import {HomeComponent} from './components/home/home.component'
+import {HelloComponent} from './components/hello/hello.component'
 import "./assets/css/app.css";
 
 const MODE = process.env.runtime;
@@ -27,7 +28,7 @@ else {
         HttpModule,
         routing
     ],
-    declarations: [AppComponent, HelloWorldComponent],
+    declarations: [AppComponent, HomeComponent, HelloComponent],
     providers: [
         appRoutingProviders,
         { provide: LocationStrategy, useClass: HashLocationStrategy }
