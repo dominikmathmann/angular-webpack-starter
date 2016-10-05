@@ -5,5 +5,5 @@ import {Component} from '@angular/core'
     selector: 'webpack-demo',
 })
 export class AppComponent {
-
+    hideNav=true;
 }

@@ -21,9 +21,8 @@ import 'jquery/dist/jquery.js'
 //bootstrap
 import "bootstrap/dist/css/bootstrap.css";
 import 'bootstrap/dist/js/bootstrap.js'
+import './assets/css/bootstrap-theme.css'
+
 
 //font awesome
-import './assets/template/css/font-awesome.min.css'
-
-//template
-import './assets/template/css/main.css'
+import './assets/css/font-awesome.css'

@@ -27,7 +27,6 @@ export class HomeComponent {
         })
 
     }
-
     title: string
     showInfo = false;
 
