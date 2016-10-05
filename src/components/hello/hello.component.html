@@ -1,15 +1,23 @@
 <div class="container">
-    <div class="col-sm-4 col-sm-offset-4">
-        <button class="btn-lg btn btn-primary title" (click)="showInfo=!showInfo">{{title}}</button>
-    </div>
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4" [ngBusy]="serviceSubscripe">
+            <button class="btn-lg btn btn-primary title" (click)="showInfo=!showInfo">{{title}}</button>
+        </div>
 
-    <div class="row nfoPanel" *ngIf="showInfo">
-        <div class="col-sm-4 col-sm-offset-4">
-            <div class="panel panel-default centered">
-                <div class="panel-body">
-                    ...from Angular2 + Webpack
+        <div class="row nfoPanel" *ngIf="showInfo">
+            <div class="col-sm-4 col-sm-offset-4">
+                <div class="panel panel-default centered">
+                    <div class="panel-body">
+                        ...from Angular2 + Webpack
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <button class="btn-lg btn btn-primary title" (click)="showError()">Show Error</button>
         </div>
     </div>
 </div>

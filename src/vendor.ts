@@ -23,6 +23,11 @@ import "bootstrap/dist/css/bootstrap.css";
 import 'bootstrap/dist/js/bootstrap.js'
 import './assets/css/bootstrap-theme.css'
 
-
 //font awesome
 import './assets/css/font-awesome.css'
+
+//third party angular 2 components
+import 'angular2-busy/build/style/busy.css'
+import 'ng2-toasty/style.css'
+import 'ng2-toasty/style-bootstrap.css'
+

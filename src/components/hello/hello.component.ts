@@ -1,6 +1,7 @@
 import {Component} from '@angular/core'
 import {HelloWorldService} from '../../services/index'
 import {ExampleModel} from '../../models/index'
+import {Subscription} from 'rxjs'
 
 @Component({
     template: require('./hello.component.html'),
@@ -10,13 +11,20 @@ import {ExampleModel} from '../../models/index'
 })
 export class HelloComponent {
     constructor(service: HelloWorldService) {
-        service.getHello().subscribe(hello => {
+        this.serviceSubscripe = service.getHello().subscribe(hello => {
             this.title = hello.message + " " + hello.name;
         })
 
     }
 
-    title: string
+    serviceSubscripe: Subscription;
+    title: string;
     showInfo = false;
+
+    showError() {
+        let undef:any=undefined;
+        
+        undef.error();
+    }
 
 }
