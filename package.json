@@ -10,13 +10,12 @@
     "protractor"
   ],
   "scripts": {
-    "json-server": "json-server --routes ./test/routes.json --watch ./test/db.json",
     "dev-server": "webpack-dev-server --hot --inline --config ./webpack.dev.config.js",
-    "start": "concurrently 'npm run dev-server' 'npm run json-server'",
+    "start": "npm run dev-server",
     "prod": "webpack --config ./webpack.prod.config.js",
     "start-prod": "webpack-dev-server --port 4300 --config ./webpack.prod.config.js",
     "protractor": "rimraf ./test/target && tsc ./test/**/*.ts -t ES5 --outDir ./test/target && protractor test/protractor.conf.js",
-    "test": "concurrently --kill-others 'npm run start-prod' 'npm run json-server' 'node ./test/delayed-protractor.js'",
+    "test": "concurrently --kill-others 'npm run start-prod' 'node ./test/delayed-protractor.js'",
     "test-f": "nodemon -e ts,html,css --exec 'npm run test'"
   },
   "author": "Dominik Mathmann, GEDOPLAN",

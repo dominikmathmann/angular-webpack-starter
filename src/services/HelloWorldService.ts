@@ -9,6 +9,6 @@ export class HelloWorldService {
     constructor(private _http:Http){}
     
     getHello(): Observable<ExampleModel> {
-        return this._http.get("/api/hello").map(e => e.json());
+        return this._http.get("/api/hello/1").map(e => e.json().data);
     }
 }
