@@ -12,8 +12,7 @@ import {BusyModule} from 'angular2-busy';
 import {ToastyModule} from 'ng2-toasty';
 
 import { AppComponent }  from './app.component';
-import {HomeComponent} from './components/home/home.component'
-import {HelloComponent} from './components/hello/hello.component'
+import {HomeComponent, AnimationComponent, HelloComponent} from './components'
 import "./assets/css/app.css";
 
 const MODE = process.env.runtime;
@@ -39,7 +38,7 @@ else {
         routing,
         BusyModule,
     ].concat(additionalImportElements),
-    declarations: [AppComponent, HomeComponent, HelloComponent],
+    declarations: [AppComponent, HomeComponent, HelloComponent, AnimationComponent],
     providers: [
         appRoutingProviders,
         { provide: LocationStrategy, useClass: HashLocationStrategy },

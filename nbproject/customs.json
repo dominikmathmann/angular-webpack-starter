@@ -1,6 +1,9 @@
 {
     "elements": {},
     "attributes": {
-        "bind-ngBusy": {}
+        "bind-ngBusy": {},
+        "routerLink": {
+            "context": "a"
+        }
     }
 }

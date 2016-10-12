@@ -1,10 +1,10 @@
 import { Routes, RouterModule } from '@angular/router';
-import {HomeComponent} from './components/home/home.component'
-import {HelloComponent} from './components/hello/hello.component'
+import {HomeComponent, AnimationComponent, HelloComponent} from './components'
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent},
     { path: 'hello', component: HelloComponent},
+    { path: 'animation', component: AnimationComponent},
 ];
 
 export const appRoutingProviders: any[] = [

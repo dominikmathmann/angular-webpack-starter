@@ -1,0 +1,17 @@
+button{
+    z-index: 1000;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {  }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {  
+    .jumbotron{
+        width: 50vw;
+        margin-left: 25vw;
+        margin-top: 10vh;
+    }}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }
