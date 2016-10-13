@@ -2,6 +2,10 @@ button{
     z-index: 1000;
 }
 
+.container{
+    z-index: 1;
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {  }
 
