@@ -23,7 +23,6 @@ if (MODE == "development") {
 }
 else {
     console.log("Running Application with PROD - Flag")
-    enableProdMode();
 }
 
 @NgModule({
