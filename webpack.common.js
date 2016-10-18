@@ -29,7 +29,7 @@ module.exports = {
             },
             {
                 test: /\.ts$/,
-                loader: 'ts-loader'
+                loaders: ['ts-loader','angular2-router-loader']
             },
             {
                 test: /\.(png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,

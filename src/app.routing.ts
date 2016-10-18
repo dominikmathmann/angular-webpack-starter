@@ -1,10 +1,10 @@
 import { Routes, RouterModule } from '@angular/router';
-import {HomeComponent, AnimationComponent, HelloComponent} from './components'
+import {HomeComponent} from './components'
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent},
-    { path: 'hello', component: HelloComponent},
-    { path: 'animation', component: AnimationComponent},
+     { path: 'hello', loadChildren: './components/+hello/hello.module#HelloModule' },
+     { path: 'animation', loadChildren: './components/+animation/animation.module#AnimationModule' }
 ];
 
 export const appRoutingProviders: any[] = [
